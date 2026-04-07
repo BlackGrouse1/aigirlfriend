@@ -5,9 +5,9 @@ from Visual import *
 def main():
     try:
         while True:
-            # clear_voice_id()
             mess = input("Your message >> ")
             if mess == "!STOP":
+                clear_voice_id()
                 print("Break...")
                 break
 
