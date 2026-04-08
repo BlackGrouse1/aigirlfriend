@@ -32,6 +32,10 @@ def text2speech(message: str):
 
     wavs, sr = result[0], result[1]
 
+    output_file_for_audios = "Audios/generated"
+    if not os.path.exists(output_file_for_audios):
+        os.mkdir("Audios/generated")
+
     output_file = f"Audios/generated/girly_voice_{get_voice_id()}.wav" #Audios/generated/
     # output_file = "Audios/generated/girly_voice_.wav" #Audios/generated/
 

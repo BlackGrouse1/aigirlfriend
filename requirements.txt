@@ -10,3 +10,5 @@ huggingface_hub==0.36.2
 flash-attention
 open-cv
 playsound==1.2.2
+tkinter
+Pillow
