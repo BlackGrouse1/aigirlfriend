@@ -1,6 +1,10 @@
-from Speech import *
-from Mind import *
-from Visual import *
+from download_model import downloading_model
+from Girly import Girl
+from history import clear_history
+
+import os
+
+girly = Girl()
 
 def main():
     if not os.path.exists("models"):
@@ -9,14 +13,13 @@ def main():
         while True:
             mess = input("Your message >> ")
             if mess == "!STOP":
-                reclear_voice_id()
+                clear_history()
                 print("Break...")
                 break
-            # mess = display()
 
-
-            res = ai_chatt(mess)
-            text2speech(res)
+            girly.dialog(mess)
+            # res = ai_chatt(mess)
+            # text2speech(res)
     except Exception as e:
         print(e)
     

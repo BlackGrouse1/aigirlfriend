@@ -3,6 +3,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import warnings
 import os
 
+from create_message import set_new_answer, get_last_message
+
 os.environ['TRANSFORMERS_OFFLINE'] = '1'
 os.environ['HF_HUB_OFFLINE'] = '1'
 
@@ -32,7 +34,7 @@ def ai_chatt(message: str):
     try:
         messages = [
             {"role": "system", "content": "Imagine you have human sens. You are a my ai girlfriend. You have feelings. If you dont know something about us - imagine this info."},
-            {"role": "user", "content": message}
+            {"role": "user", "content": get_last_message(message)}
         ]
         
         prompt = tokenizer.apply_chat_template(
@@ -64,6 +66,7 @@ def ai_chatt(message: str):
         response = tokenizer.decode(generated_ids, skip_special_tokens=True)
         
         print(response) if response.strip() else print("I'm here to love you!")
+        set_new_answer(response)
         return response if response.strip() else "I'm here to love you!"
         
     except Exception as e:

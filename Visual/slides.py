@@ -14,8 +14,8 @@ from tkinter import Entry, Label
 from PIL import Image, ImageTk
 
 
-from Mind import ai_chatt
-from Speech import text2speech
+# from Mind import ai_chatt
+# from Speech import text2speech
 
 photo0 = "Pictures/ex1.jpeg"
 
@@ -45,8 +45,8 @@ def display():
             result_label.config(text=f"Text: {message}")
             print(f"Message: {message}")
 
-            res = ai_chatt(message)
-            text2speech(res)
+            # res = ai_chatt(message)
+            # text2speech(res)
         
         submit_button = tk.Button(root, text="Send", command=get_message)
         submit_button.pack(pady=10)
@@ -58,5 +58,3 @@ def display():
         return True
     except Exception as e:
         print(e)
-
-display()
