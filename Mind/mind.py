@@ -3,7 +3,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import warnings
 import os
 
-from create_message import set_new_answer, get_last_message
+from Mind.create_message import set_new_answer, get_last_message
 
 os.environ['TRANSFORMERS_OFFLINE'] = '1'
 os.environ['HF_HUB_OFFLINE'] = '1'
