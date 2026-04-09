@@ -14,7 +14,7 @@ def get_last_message(message: str):
         
         if last_mess != "":
             new_message = f"my last message: {last_mess}; ur last answer: {last_ans};\n\n{message}"
-        else:
+        elif last_mess == "":
             new_message = message
 
         file_data['last_message'] = message

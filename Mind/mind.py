@@ -37,6 +37,7 @@ def ai_chatt(message: str):
             {"role": "user", "content": get_last_message(message)}
         ]
         
+        print(f"full message: {get_last_message(message)}")
         prompt = tokenizer.apply_chat_template(
             messages, 
             tokenize=False,
