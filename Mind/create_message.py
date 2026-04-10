@@ -2,12 +2,17 @@ import json
 from pathlib import Path
 
 Path(__file__).parent.parent
+from Commands import analyze_message
 
 path = "session.json"
 
 def get_last_message(message: str):
     with open(path, 'r', encoding='utf-8') as f:
         file_data = json.load(f)
+
+        analyze = analyze_message(message)
+        if analyze == "command":
+            return ""
 
         last_mess = file_data['last_message']
         last_ans = file_data['last_answer']
