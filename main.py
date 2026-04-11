@@ -1,5 +1,6 @@
 from download_model import downloading_model
 from Girly import Girl
+from history import clear_history
 
 import os
 
@@ -13,3 +14,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    clear_history()

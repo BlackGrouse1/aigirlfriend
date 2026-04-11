@@ -1,5 +1,6 @@
 import json
 import os
+import time
 
 path = "session.json"
 
@@ -11,6 +12,8 @@ def clear_history():
         file_data['voice_id'] = 0
         file_data['last_message'] = ''
         file_data['last_answer'] = ''
+
+        time.sleep(5) 
 
     for i in range(voice_id):
         file_path = f"Audios/generated/girly_voice_{i}.wav"

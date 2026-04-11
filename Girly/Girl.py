@@ -1,5 +1,6 @@
 from pathlib import Path
 import customtkinter as ctk
+import playsound as ps
 
 Path(__file__).parent.parent
 
