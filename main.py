@@ -1,8 +1,6 @@
 from download_model import downloading_model
 from Girly import Girl
-from history import clear_history
 
-import customtkinter as ctk
 import os
 
 girly = Girl()
